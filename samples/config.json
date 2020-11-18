@@ -1,0 +1,16 @@
+{
+  "rootUrl": "",
+  "authentication": {
+    "clientKey": "",
+    "clientSecret": ""
+  },
+  "mutualAuth": {
+    "privateKey": "",
+    "publicCert": ""
+  },
+  "httpProxy": {
+    "isEnabled": false,
+    "host": "",
+    "port": ""
+  }
+}
