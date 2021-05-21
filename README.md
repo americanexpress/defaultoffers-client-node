@@ -123,7 +123,7 @@ Sample Resposne :
   status: 'approved',
   expires_in: '3599', // token expirty in seconds, you can cache the token for the amount of time specified.
   token_type: 'BearerToken',
-  access_token: 'wJeW9CPT0DbrqBjrTN1xbMQZkae2'
+  access_token: 'access token example'
 }
 
 ```

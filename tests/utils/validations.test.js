@@ -32,4 +32,3 @@ test('should return Array of errors', () => {
         'message type id is missing in headers'
     ]);
 });
-

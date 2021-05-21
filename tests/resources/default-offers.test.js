@@ -24,7 +24,7 @@ beforeAll(() => {
         authentication: {
             bearerToken: 'bearer_token_value',
             clientKey: 'key',
-            clientSecret: 'secret'
+            clientSecret: 'mock value'
         },
         mutualAuth: {
             privateKey: 'privateKey',
@@ -177,5 +177,4 @@ test('should return validation exception if headers are empty', () => {
         expect(e).toBeInstanceOf(DefaultOffersRequestValidationError);
     }
 });
-
 

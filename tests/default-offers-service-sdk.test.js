@@ -21,7 +21,7 @@ beforeAll(() => {
         authentication: {
             bearerToken: '',
             clientKey: 'key',
-            clientSecret: 'secret'
+            clientSecret: 'mock value'
         },
         mutualAuth: {
             privateKey: 'privateKey',
@@ -50,10 +50,10 @@ test('should be able to set bearer token in configs', () => {
 test('should throw exception if missed configs', () => {
     function configure() {
         sdk.configure({authentication: {
-            bearerToken: '',
-            clientKey: '',
-            clientSecret: ''
-        },});
+                bearerToken: '',
+                clientKey: '',
+                clientSecret: ''
+            },});
     }
     expect(configure).toThrow(DefaultOffersRequestValidationError);
 });

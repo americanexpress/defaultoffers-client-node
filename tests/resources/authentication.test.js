@@ -22,7 +22,7 @@ beforeAll(() => {
         authentication: {
             bearerToken: '',
             clientKey: 'key',
-            clientSecret: 'secret'
+            clientSecret: 'mock value'
         },
         mutualAuth: {
             privateKey: 'privateKey',
@@ -42,17 +42,17 @@ test('should return access token', () => {
         status: 'approved',
         expires_in: '3599',
         token_type: 'BearerToken',
-        access_token: 'access_token_string'
+        access_token: 'access token mock'
     }));
 
     return sdk.authentication.getBearerToken().then(resp => {
-        expect(resp.access_token).toBe('access_token_string');
+        expect(resp.access_token).toBe('access token mock');
         expect(httpclient.callService).toHaveBeenCalledTimes(1);
         expect(httpclient.callService.mock.calls[0][0]).toBe('/apiplatform/v1/oauth/token_provisioning/bearer_tokens');
         expect(httpclient.callService.mock.calls[0][1]).toBe('POST');
         const headers = httpclient.callService.mock.calls[0][2];
         expect(headers['X-AMEX-API-KEY']).toBe('key');
-        expect(headers['Authorization']).toBe('Basic a2V5OnNlY3JldA=='); //this value is: base64("key:secret")
+        expect(headers['Authorization']).toBe('Basic a2V5Om1vY2sgdmFsdWU='); //this value is: base64("key:secret")
         expect(headers['content-type']).toBe('application/x-www-form-urlencoded');
     });
 });
